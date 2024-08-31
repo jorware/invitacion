@@ -9735,36 +9735,36 @@
 										<div class="animated"
 											style="width: 100%; height: 100%; animation: 1470ms ease 100ms 1 normal both running fade-RIGHT-87c7b6a2-4cb9-434a-9f34-a8078ccfce1c;">
 
-											<div id="countdown"></div>
+											<div id="countdown" style="color:#2d4669;font-family:YACkoGIT9qo-0;">
 
-											<script>
-												// Establecer la fecha objetivo
-												const targetDate = new Date("November 22, 2024 21:30:00").getTime();
+												<script>
+													// Establecer la fecha objetivo
+													const targetDate = new Date("November 22, 2024 21:30:00").getTime();
 
-												// Actualizar la cuenta regresiva cada segundo
-												const countdownInterval = setInterval(() => {
-													const now = new Date().getTime();
-													const distance = targetDate - now;
+													// Actualizar la cuenta regresiva cada segundo
+													const countdownInterval = setInterval(() => {
+														const now = new Date().getTime();
+														const distance = targetDate - now;
 
-													// Cálculos de días, horas, minutos y segundos
-													const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-													const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-													const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-													const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+														// Cálculos de días, horas, minutos y segundos
+														const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+														const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+														const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+														const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-													// Mostrar la cuenta regresiva
-													document.getElementById("countdown").innerHTML = `
+														// Mostrar la cuenta regresiva
+														document.getElementById("countdown").innerHTML = `
                 ${days} días <br> ${hours} horas <br> ${minutes} minutos <br> ${seconds} segundos
             `;
 
-													// Si la cuenta regresiva ha terminado
-													if (distance < 0) {
-														clearInterval(countdownInterval);
-														document.getElementById("countdown").innerHTML = "¡La fecha ha llegado!";
-													}
-												}, 1000);
-											</script>
-
+														// Si la cuenta regresiva ha terminado
+														if (distance < 0) {
+															clearInterval(countdownInterval);
+															document.getElementById("countdown").innerHTML = "¡La fecha ha llegado!";
+														}
+													}, 1000);
+												</script>
+											</div>
 
 
 										</div>
