@@ -87,12 +87,12 @@
 		}
 
 		#countdown {
-            font-family: Arial, sans-serif;
-            color: #333;
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-        }
+			font-family: Arial, sans-serif;
+			color: #333;
+			font-size: 24px;
+			text-align: center;
+			margin-top: 20px;
+		}
 
 		@font-face {
 			font-family: YACkoGIT9qo-0;
@@ -9641,15 +9641,17 @@
 								<div class="animation_container" style="width:100%;height:100%;">
 									<div class="animated"
 										style="width: 100%; height: 100%; animation: 1470ms ease 100ms 1 normal both running fade-RIGHT-fcf09dfa-ac6d-43a4-8a75-074019a52e1f;">
+
 										<div id="embed-MvGeQrBODUpOZubq" data-content-width="412.53623188405794"
 											data-content-height="451.9035674470458"
 											style="width: 100%; height: 100%; opacity: 0; position: relative; overflow: hidden;">
-											<iframe
-												src="https://cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F1ZfDmIlb6Jo9qzg76GsvN-lbIrWWYeFkW5x71D9iBcMQ%2Fedit%3Fusp%3Ddrivesdk&amp;key=462812a26b593f2dbfbfcbb14f6d699a"
-												style="width: 412.536px; height: 451.904px; border: 0px; transform-origin: 0px 0px; top: 50%; left: 50%; position: absolute; transform: scale(0.126133) translate(-50%, -50%);"
-												allowfullscreen="allowfullscreen" scrolling="no"
-												sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+											<!-- Este es el div que reproduce el sonido -->
 										</div>
+										<!-- Reproductor de audio oculto -->
+										<audio id="audioPlayer"
+											src="https://drive.google.com/uc?export=download&id=1RuLrYw5giNHSU2jgpSXNwxRK7Fupgrku"
+											style="display: none;"></audio>
+
 									</div>
 								</div>
 							</div>
@@ -10073,7 +10075,9 @@
 			</div>
 
 		</div>
-		<img src="images/3fa997efadaee766e0a389c69e92a53f.svg" alt="Gold Floral Border Separator. Golden Flower Pattern Page Text Divider." loading="lazy" style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
+		<img src="images/3fa997efadaee766e0a389c69e92a53f.svg"
+			alt="Gold Floral Border Separator. Golden Flower Pattern Page Text Divider." loading="lazy"
+			style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transform:translate(-50%, -50%) rotate(0deg);">
 	</section><a id="page-4" aria-hidden="true" style="visibility:hidden;"></a>
 
 
@@ -11377,6 +11381,23 @@
 	<script src="js/b7d91262d3324ab0ad9ba844ac9c886c544fe3a4602d1979c31da4a1e2c1cea6.js" async="" nonce=""></script>
 	<script src="js/388fb330498371d4935abbff11d34d4c30842ca3c4a128cdd290d29db98acb41.js" async="" nonce=""></script>
 	</div>
+	<script>
+		// Selecciona el div y el reproductor de audio
+		const embedDiv = document.getElementById('embed-MvGeQrBODUpOZubq');
+		const audioPlayer = document.getElementById('audioPlayer');
+
+		// Añade el evento de clic al div
+		embedDiv.addEventListener('click', function () {
+			// Verifica si el audio está cargado
+			if (audioPlayer.readyState >= 2) {
+				audioPlayer.play().catch(error => {
+					console.error("Error al intentar reproducir el audio:", error);
+				});
+			} else {
+				console.warn("El reproductor de audio no está listo.");
+			}
+		});
+	</script>
 </body>
 
 </html>
